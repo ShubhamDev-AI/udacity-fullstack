@@ -1,3 +1,3 @@
 # udacity-fullstack
 
-My Udacity Fullstack developer course source
+My Udacity *Full Stack Web Developer Nanodegree* course source
