@@ -25,6 +25,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source
  - [MDN HTML Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
  - [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
  - [MDN length Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+ - [MDN CSS Shorthand Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
  - [CSS Tricks](https://css-tricks.com/almanac/)
  - [CSS Tricks: The Lengths of CSS](https://css-tricks.com/the-lengths-of-css/)
 
