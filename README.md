@@ -22,10 +22,14 @@ My Udacity *Full Stack Web Developer Nanodegree* course source
  - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
  - [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
  - [autopep8](https://pypi.python.org/pypi/autopep8/)
+ - [Example Google Style Python Docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+ - [Python Docstrings](http://epydoc.sourceforge.net/docstrings.html)
  - [MDN HTML Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
  - [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
  - [MDN length Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
  - [MDN CSS Shorthand Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
  - [CSS Tricks](https://css-tricks.com/almanac/)
  - [CSS Tricks: The Lengths of CSS](https://css-tricks.com/the-lengths-of-css/)
+ - [A List Apart](http://alistapart.com/)
+
 
