@@ -1,0 +1,29 @@
+.hero {
+    width: 60%;
+    order: 1;
+}
+.top-news {
+    width: 40%;
+    order: 2;
+}
+
+.scores {
+    width: 60%;
+    order: 4;
+}
+.weather {
+    width: 40%;
+    order: 3;
+}
+
+.recent-news {
+    order: 5;
+}
+
+.nav a {
+    padding: 12px 20px;
+}
+
+.header {
+    min-height: 56px;
+}

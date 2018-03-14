@@ -1,9 +1,11 @@
-# udacity-fullstack
+# Udacity Fullstack Developer Nanodegree
 
 My Udacity *Full Stack Web Developer Nanodegree* course source
 
 
 ## Resources
+
+### Python
 
  - [Download Python](https://www.python.org/downloads/)
  - [Python Module: time](https://docs.python.org/2/library/time.html)
@@ -24,6 +26,9 @@ My Udacity *Full Stack Web Developer Nanodegree* course source
  - [autopep8](https://pypi.python.org/pypi/autopep8/)
  - [Example Google Style Python Docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
  - [Python Docstrings](http://epydoc.sourceforge.net/docstrings.html)
+
+### HTML & CSS
+
  - [MDN HTML Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
  - [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
  - [MDN length Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
