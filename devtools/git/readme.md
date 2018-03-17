@@ -1,5 +1,12 @@
 # Git
 
+## Resources
+
+ - [Git Internals - Plumbing and Porcelain](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
+ - [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+ - [Git Basics - Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+ - [Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
+
 ## Terms
 
 **Version Control System (VCS)** or **Source Code Manager (SCM)**: A VCS allows you to:
@@ -49,7 +56,7 @@ game. If the risky move doesn't pan out, then you can just go back to the save p
 key thing that makes branches incredibly powerful is that you can make save points on
 one branch, and then switch to a different branch and make save points there, too.
 
-## Configure
+## Configuration
 
 ```sh
 # sets up Git with your name
@@ -69,3 +76,23 @@ git config --global core.editor "code --wait"
 
 git config --list
 ```
+
+## `.git` Directory
+
+The `.git` directory contains:
+
+ - `config` file - where all project specific configuration settings are stored.
+ - `description` file - this file is only used by the GitWeb program
+ - `hooks` directory - this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events
+ - `info` directory - contains the global excludes file
+ - `objects` directory - this directory will store all of the commits we make
+ - `refs` directory - this directory holds pointers to commits (basically the "branches" and "tags")
+
+## Commands
+
+`git init` - Creates an empty Git repository [Docs](https://git-scm.com/docs/git-init)
+
+
+`git clone` - Clone a repository into a new directory [Docs](https://git-scm.com/docs/git-clone)
+
+`git status`- [Docs](https://git-scm.com/docs/git-status)
