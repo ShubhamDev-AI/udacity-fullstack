@@ -1,6 +1,6 @@
 # Udacity Fullstack Developer Nanodegree
 
-My Udacity *Full Stack Web Developer Nanodegree* course source
+My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
 
 ## Resources
