@@ -16,7 +16,6 @@
  - [Learn Git Branching](http://learngitbranching.js.org/)
  - [Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches)
  - [Basic Merging from Git Book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging)
- - [git-merge from Git Docs](https://git-scm.com/docs/git-merge)
  - [git merge from Atlassian blog](https://www.atlassian.com/git/tutorials/git-merge)
  - [Basic Merge Conflicts from the Git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts)
  - [How Conflicts Are Presented from the Git docs](https://git-scm.com/docs/git-merge#_how_conflicts_are_presented)
@@ -76,43 +75,67 @@ The `.git` directory contains:
 
 ## Commands
 
+#### init
+
 `git init` - Creates an empty Git repository [Docs](https://git-scm.com/docs/git-init)
 
+#### clone
 
 `git clone` - Clone a repository into a new directory [Docs](https://git-scm.com/docs/git-clone)
 
+#### status
+
 `git status`- [Docs](https://git-scm.com/docs/git-status)
 
+#### log
 
 `git log` - Shows the commit logs. [Docs](https://git-scm.com/docs/git-log)
+
 `git log --oneline` - Display file changes summary
+
 `git log -p` - Display actual file changes
+
 `git log --oneline --decorate --graph --all`
+
+#### add
 
 `git add <file>` - Move files from the Working Directory to the Staging Index (Stage)
 `git add .` - Stage all files in the current directory
 
+#### rm
+
 `git rm --cached <file>` - Move a file from the Staging Index back to the Working Directory (Unstage)
+
+#### commit
 
 `git commit` - Commit changes to the repository
 `git commit -m '<message>'` - Commit with message
 `git commit --amend` - Alter the most-recent commit
+
+#### diff
 
 `git diff` - See changes that have been made but haven't been committed [Docs](https://git-scm.com/docs/git-diff)
 
 #### tag
 
 `git tag <tag>` - Add a lightweight tag to a commit
+
 `git tag -a <tag>` - Add an annotated tag to a commit
+
 `git tag -d <tag>` - Delete a tag
+
 `git tag <tag> <SHA>` - Add tag to specified commit
 
 #### branch
 
 `git branch` - List branches
+
 `git branch <branch>` - Make a branch
+
 `git branch <branch> <SHA>` - Make a branch starting from specified commit
+
 `git branch -d <branch>` - Delete a branch
+
 `git branch -D <branch>` - Delete a branch (force)
 
 #### checkout
@@ -122,7 +145,7 @@ The `.git` directory contains:
 
 #### merge
 
-`git merge <branch>` - Merge specified branch into current branch
+`git merge <branch>` - Merge specified branch into current branch [Docs](https://git-scm.com/docs/git-merge)
 
 
 #### revert
@@ -132,8 +155,11 @@ The `.git` directory contains:
 #### reset
 
 `git reset <SHA>` - Reset (erase) commits [Docs](https://git-scm.com/docs/git-reset)
+
 `git reset <SHA> --mixed` - Move changes to Working Directory
+
 `git reset <SHA> --soft` - Move changes to Staging Index
+
 `git reset <SHA> --hard` - Move changes to Trash
 
 
