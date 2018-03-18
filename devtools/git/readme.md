@@ -22,8 +22,7 @@
  - [git revert Atlassian tutorial](https://www.atlassian.com/git/tutorials/undoing-changes)
  - [Reset Demystified from Git Blog](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
  - [Ancestry References from Git Book](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Ancestry-References)
-
-
+ - [Working with Remotes from the Git book](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#_showing_your_remotes)
 ## Git Flow
 
 ```
@@ -100,6 +99,7 @@ The `.git` directory contains:
 #### add
 
 `git add <file>` - Move files from the Working Directory to the Staging Index (Stage)
+
 `git add .` - Stage all files in the current directory
 
 #### rm
@@ -138,9 +138,12 @@ The `.git` directory contains:
 
 `git branch -D <branch>` - Delete a branch (force)
 
+`git branch --set-upstream-to <remote>/<branch>` - Set upstream for the current branch
+
 #### checkout
 
 `git checkout <branch>` - Switch to a branch
+
 `git checkout -b <branch>` - Create branch and switch to it
 
 #### merge
@@ -162,6 +165,34 @@ The `.git` directory contains:
 
 `git reset <SHA> --hard` - Move changes to Trash
 
+
+#### remote
+
+`git remote` - List remote repositories [Docs](https://git-scm.com/docs/git-remote)
+
+`git remote -v` - List remotes with URL
+
+`git remote add <remote> <URL|SSH>` - Add remote with specified shortname (usually *origin*)
+
+#### push
+
+`git push` - Send local commits to a remote repository **upstream**
+
+`git push <remote> <branch>` - Push to specified remote branch
+
+`git push -u <remote> <branch>` - Push and set as **upstream**
+
+#### pull
+
+`git pull` - Fetch and merge remote commits from **upstream**
+
+`git pull <remote> <branch>` - Pull specified remote branch
+
+#### fetch
+
+`git fetch` - Fetch remote commits from all branches without merging
+
+`git fetch <remote> <branch>` - Fetch commits for specified remote branch
 
 
 ## Commit Messages
@@ -239,6 +270,25 @@ Here's how we can refer to previous commits:
    - HEAD~3
 
 *The main difference between the ^ and the ~ is when a commit is created from a merge. A merge commit has two parents. With a merge commit, the ^ reference is used to indicate the first parent of the commit while ^2 indicates the second parent. The first parent is the branch you were on when you ran git merge while the second parent is the branch that was merged in.*
+
+## Remote Repository
+
+*Git is a distributed version control system which means there is not one main repository of information. Each developer has a copy of the repository. So you can have a copy of the repository (which includes the published commits and version history) and your friend can also have a copy of the same repository. Each repository has the exact same information that the other ones have, there's no one repository that's the main one.*
+
+Local refs: `<remote-shortname>/<branch>`
+
+Fetch changes and merge:
+
+```
+git pull origin master
+```
+
+Fetch changes and merge manually:
+
+```
+git fetch origin master
+git merge origin/master
+```
 
 
 ## Terms
