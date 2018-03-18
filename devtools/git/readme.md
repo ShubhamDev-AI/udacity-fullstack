@@ -6,6 +6,18 @@
  - [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
  - [Git Basics - Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
  - [Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
+ - [Git Basics - Tagging from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+ - [Git Tag from the Git Docs](https://git-scm.com/docs/git-tag)
+ - [Ignoring files from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
+ - [gitignore from the Git Docs](https://git-scm.com/docs/gitignore#_pattern_format)
+ - [Ignoring files from the GitHub Docs](https://help.github.com/articles/ignoring-files/)
+ - [gitignore.io](https://www.gitignore.io/)
+ - [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+ - [Learn Git Branching](http://learngitbranching.js.org/)
+ - [Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches)
+ - [Basic Merging from Git Book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging)
+ - [git-merge from Git Docs](https://git-scm.com/docs/git-merge)
+ - [git merge from Atlassian blog](https://www.atlassian.com/git/tutorials/git-merge)
 
 
 ## Git Flow
@@ -66,11 +78,11 @@ The `.git` directory contains:
 
 `git status`- [Docs](https://git-scm.com/docs/git-status)
 
+
 `git log` - Shows the commit logs. [Docs](https://git-scm.com/docs/git-log)
-
 `git log --oneline` - Display file changes summary
-
 `git log -p` - Display actual file changes
+`git log --oneline --decorate --graph --all`
 
 `git add <file>` - Move files from the Working Directory to the Staging Index (Stage)
 `git add .` - Stage all files in the current directory
@@ -82,6 +94,31 @@ The `.git` directory contains:
 
 `git diff` - See changes that have been made but haven't been committed [Docs](https://git-scm.com/docs/git-diff)
 
+#### tag
+
+`git tag <tag>` - Add a lightweight tag to a commit
+`git tag -a <tag>` - Add an annotated tag to a commit
+`git tag -d <tag>` - Delete a tag
+`git tag <tag> <SHA>` - Add tag to specified commit
+
+#### branch
+
+`git branch` - List branches
+`git branch <branch>` - Make a branch
+`git branch <branch> <SHA>` - Make a branch starting from specified commit
+`git branch -d <branch>` - Delete a branch
+`git branch -D <branch>` - Delete a branch (force)
+
+#### checkout
+
+`git checkout <branch>` - Switch to a branch
+`git checkout -b <branch>` - Create branch and switch to it
+
+#### merge
+
+`git merge <branch>` - Merge specified branch into current branch
+
+
 ## Commit Messages
 
 *The best way that I've found to come up with a commit message is to finish this phrase, "This commit will...". However, you finish that phrase, use that as your commit message.*
@@ -90,6 +127,26 @@ The `.git` directory contains:
 *When you're writing the commit message, the first line is the message itself. After the message, leave a blank line, and then type out the body or explanation including details about why the commit is needed (e.g. URL links).*
 
 [Udacity Commit Message Style Guide](https://udacity.github.io/git-styleguide/)
+
+## Tags
+
+*In the command above (git tag -a v1.0) the -a flag is used. This flag tells Git to create an annotated flag. If you don't provide the flag (i.e. git tag v1.0) then it'll create what's called a lightweight tag.*
+
+*Annotated tags are recommended because they include a lot of extra information such as:*
+
+ - *the person who made the tag*
+ - *the date the tag was made*
+ - *a message for the tag*
+
+
+## Merge
+
+There are two types of merges:
+
+ - Fast-forward merge – the branch being merged in must be ahead of the checked out branch. The checked out branch's pointer will just be moved forward to point to the same commit as the other branch.
+ - the regular type of merge
+   - two divergent branches are combined
+   - a merge commit is created
 
 
 ## `.gitignore`
@@ -110,10 +167,7 @@ The `.git` directory contains:
 
 
 
- - [Ignoring files from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
- - [gitignore from the Git Docs](https://git-scm.com/docs/gitignore#_pattern_format)
- - [Ignoring files from the GitHub Docs](https://help.github.com/articles/ignoring-files/)
- - [gitignore.io](https://www.gitignore.io/)
+
 
 ## Terms
 
