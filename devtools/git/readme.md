@@ -18,6 +18,11 @@
  - [Basic Merging from Git Book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging)
  - [git-merge from Git Docs](https://git-scm.com/docs/git-merge)
  - [git merge from Atlassian blog](https://www.atlassian.com/git/tutorials/git-merge)
+ - [Basic Merge Conflicts from the Git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts)
+ - [How Conflicts Are Presented from the Git docs](https://git-scm.com/docs/git-merge#_how_conflicts_are_presented)
+ - [git revert Atlassian tutorial](https://www.atlassian.com/git/tutorials/undoing-changes)
+ - [Reset Demystified from Git Blog](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
+ - [Ancestry References from Git Book](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Ancestry-References)
 
 
 ## Git Flow
@@ -91,6 +96,7 @@ The `.git` directory contains:
 
 `git commit` - Commit changes to the repository
 `git commit -m '<message>'` - Commit with message
+`git commit --amend` - Alter the most-recent commit
 
 `git diff` - See changes that have been made but haven't been committed [Docs](https://git-scm.com/docs/git-diff)
 
@@ -117,6 +123,19 @@ The `.git` directory contains:
 #### merge
 
 `git merge <branch>` - Merge specified branch into current branch
+
+
+#### revert
+
+`git revert <SHA>` - Revert changes of specified commit [Docs](https://git-scm.com/docs/git-revert)
+
+#### reset
+
+`git reset <SHA>` - Reset (erase) commits [Docs](https://git-scm.com/docs/git-reset)
+`git reset <SHA> --mixed` - Move changes to Working Directory
+`git reset <SHA> --soft` - Move changes to Staging Index
+`git reset <SHA> --hard` - Move changes to Trash
+
 
 
 ## Commit Messages
@@ -148,6 +167,13 @@ There are two types of merges:
    - two divergent branches are combined
    - a merge commit is created
 
+### Merge Conflict Indicators Explanation
+The editor has the following merge conflict indicators:
+
+ - `<<<<<<< HEAD` everything below this line (until the next indicator) shows you what's on the current branch
+ - `|||||||` merged common ancestors everything below this line (until the next indicator) shows you what the original lines were
+ - `=======` is the end of the original lines, everything that follows (until the next indicator) is what's on the branch that's being merged in
+ - `>>>>>>>` heading-update is the ending indicator of what's on the branch that's being merged in (in this case, the heading-update branch)
 
 ## `.gitignore`
 
@@ -166,7 +192,27 @@ There are two types of merges:
    - a/b/c/z
 
 
+## Relative Commit References
 
+*You already know that you can reference commits by their SHA, by tags, branches, and the special HEAD pointer. Sometimes that's not enough, though. There will be times when you'll want to reference a commit relative to another commit. For example, there will be times where you'll want to tell Git about the commit that's one before the current commit...or two before the current commit. There are special characters called "Ancestry References" that we can use to tell Git about these relative references. Those characters are:*
+
+ - `^` indicates the parent commit
+ - `~` indicates the first parent commit
+
+Here's how we can refer to previous commits:
+
+ - the parent commit – the following indicate the parent commit of the current commit
+   - HEAD^
+   - HEAD~
+   - HEAD~1
+ - the grandparent commit – the following indicate the grandparent commit of the current commit
+   - HEAD^^
+   - HEAD~2
+ - the great-grandparent commit – the following indicate the great-grandparent commit of the current commit
+   - HEAD^^^
+   - HEAD~3
+
+*The main difference between the ^ and the ~ is when a commit is created from a merge. A merge commit has two parents. With a merge commit, the ^ reference is used to indicate the first parent of the commit while ^2 indicates the second parent. The first parent is the branch you were on when you ran git merge while the second parent is the branch that was merged in.*
 
 
 ## Terms
