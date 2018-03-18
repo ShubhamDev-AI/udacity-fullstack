@@ -7,6 +7,114 @@
  - [Git Basics - Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
  - [Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
 
+
+## Git Flow
+
+```
+Working Directory
+
+==>  git add  ==>
+<==  git rm --cached <==
+
+Staging Index
+
+==> git commit ==>
+
+Repository
+
+```
+
+
+## Configuration
+
+```sh
+# sets up Git with your name
+git config --global user.name "<Your-Full-Name>"
+
+# sets up Git with your email
+git config --global user.email "<your-email-address>"
+
+# makes sure that Git output is colored
+git config --global color.ui auto
+
+# displays the original state in a conflict
+git config --global merge.conflictstyle diff3
+
+
+git config --global core.editor "code --wait"
+
+git config --list
+```
+
+## `.git` Directory
+
+The `.git` directory contains:
+
+ - `config` file - where all project specific configuration settings are stored.
+ - `description` file - this file is only used by the GitWeb program
+ - `hooks` directory - this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events
+ - `info` directory - contains the global excludes file
+ - `objects` directory - this directory will store all of the commits we make
+ - `refs` directory - this directory holds pointers to commits (basically the "branches" and "tags")
+
+## Commands
+
+`git init` - Creates an empty Git repository [Docs](https://git-scm.com/docs/git-init)
+
+
+`git clone` - Clone a repository into a new directory [Docs](https://git-scm.com/docs/git-clone)
+
+`git status`- [Docs](https://git-scm.com/docs/git-status)
+
+`git log` - Shows the commit logs. [Docs](https://git-scm.com/docs/git-log)
+
+`git log --oneline` - Display file changes summary
+
+`git log -p` - Display actual file changes
+
+`git add <file>` - Move files from the Working Directory to the Staging Index (Stage)
+`git add .` - Stage all files in the current directory
+
+`git rm --cached <file>` - Move a file from the Staging Index back to the Working Directory (Unstage)
+
+`git commit` - Commit changes to the repository
+`git commit -m '<message>'` - Commit with message
+
+`git diff` - See changes that have been made but haven't been committed [Docs](https://git-scm.com/docs/git-diff)
+
+## Commit Messages
+
+*The best way that I've found to come up with a commit message is to finish this phrase, "This commit will...". However, you finish that phrase, use that as your commit message.*
+
+
+*When you're writing the commit message, the first line is the message itself. After the message, leave a blank line, and then type out the body or explanation including details about why the commit is needed (e.g. URL links).*
+
+[Udacity Commit Message Style Guide](https://udacity.github.io/git-styleguide/)
+
+
+## `.gitignore`
+
+*If you want to keep a file in your project's directory structure but make sure it isn't accidentally committed to the project, you can use the specially named file, `.gitignore`*
+
+*Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:*
+
+ - blank lines can be used for spacing
+ - `#` marks line as a comment
+ - `*` matches 0 or more characters
+ - `?` matches 1 character
+ - `[abc]` - matches a, b, or c
+ - `**` - matches nested directories - `a/**/z` matches
+   - a/z
+   - a/b/z
+   - a/b/c/z
+
+
+
+ - [Ignoring files from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
+ - [gitignore from the Git Docs](https://git-scm.com/docs/gitignore#_pattern_format)
+ - [Ignoring files from the GitHub Docs](https://help.github.com/articles/ignoring-files/)
+ - [gitignore.io](https://www.gitignore.io/)
+
 ## Terms
 
 **Version Control System (VCS)** or **Source Code Manager (SCM)**: A VCS allows you to:
@@ -56,43 +164,3 @@ game. If the risky move doesn't pan out, then you can just go back to the save p
 key thing that makes branches incredibly powerful is that you can make save points on
 one branch, and then switch to a different branch and make save points there, too.
 
-## Configuration
-
-```sh
-# sets up Git with your name
-git config --global user.name "<Your-Full-Name>"
-
-# sets up Git with your email
-git config --global user.email "<your-email-address>"
-
-# makes sure that Git output is colored
-git config --global color.ui auto
-
-# displays the original state in a conflict
-git config --global merge.conflictstyle diff3
-
-
-git config --global core.editor "code --wait"
-
-git config --list
-```
-
-## `.git` Directory
-
-The `.git` directory contains:
-
- - `config` file - where all project specific configuration settings are stored.
- - `description` file - this file is only used by the GitWeb program
- - `hooks` directory - this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events
- - `info` directory - contains the global excludes file
- - `objects` directory - this directory will store all of the commits we make
- - `refs` directory - this directory holds pointers to commits (basically the "branches" and "tags")
-
-## Commands
-
-`git init` - Creates an empty Git repository [Docs](https://git-scm.com/docs/git-init)
-
-
-`git clone` - Clone a repository into a new directory [Docs](https://git-scm.com/docs/git-clone)
-
-`git status`- [Docs](https://git-scm.com/docs/git-status)
