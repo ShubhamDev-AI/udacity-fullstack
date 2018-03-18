@@ -96,6 +96,19 @@ The `.git` directory contains:
 
 `git log --oneline --decorate --graph --all`
 
+`git log --author=<name>` - Filter commits by author
+
+`git log --grep=<regex>` - Filter by regex
+
+`git shortlog` - Displays an alphabetical list of names and the commit messages
+
+`git shortlog -s` - Show just the number of commits
+
+`git shortlog -sn` - Sort numerically
+
+`git show <SHA>` - Show details of a commit
+
+
 #### add
 
 `git add <file>` - Move files from the Working Directory to the Staging Index (Stage)
