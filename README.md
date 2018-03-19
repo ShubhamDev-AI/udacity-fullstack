@@ -3,6 +3,13 @@
 My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
 
+## Notes
+
+ - [Git](devtools/git/readme.md)
+ - [HTTP](devtools/http/readme.md)
+ - [Shell](devtools/shell/readme.md)
+
+
 ## Resources
 
 ### Python
@@ -38,3 +45,36 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [A List Apart](http://alistapart.com/)
 
 
+### Shell
+
+ - [The Bash Academy](http://www.bash.academy/)
+ - [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+ - [BASH Programming](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+ - [RegExr](https://regexr.com/)
+
+ ### Git
+
+ - [Git Internals - Plumbing and Porcelain](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
+ - [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+ - [Git Basics - Recording Changes to the Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+ - [Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository)
+ - [Git Basics - Tagging from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+ - [Git Tag from the Git Docs](https://git-scm.com/docs/git-tag)
+ - [Ignoring files from the Git Book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files)
+ - [gitignore from the Git Docs](https://git-scm.com/docs/gitignore#_pattern_format)
+ - [Ignoring files from the GitHub Docs](https://help.github.com/articles/ignoring-files/)
+ - [gitignore.io](https://www.gitignore.io/)
+ - [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+ - [Learn Git Branching](http://learngitbranching.js.org/)
+ - [Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches)
+ - [Basic Merging from Git Book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging)
+ - [git merge from Atlassian blog](https://www.atlassian.com/git/tutorials/git-merge)
+ - [Basic Merge Conflicts from the Git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts)
+ - [How Conflicts Are Presented from the Git docs](https://git-scm.com/docs/git-merge#_how_conflicts_are_presented)
+ - [git revert Atlassian tutorial](https://www.atlassian.com/git/tutorials/undoing-changes)
+ - [Reset Demystified from Git Blog](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
+ - [Ancestry References from Git Book](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Ancestry-References)
+ - [Working with Remotes from the Git book](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#_showing_your_remotes)
+ - [Git Branching - Rebasing from the Git Book](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+ - [Git Rebase from the Atlassian blog](https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase)
+ - [FIRST TIMERS ONLY](http://www.firsttimersonly.com/)

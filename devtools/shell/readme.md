@@ -1,14 +1,6 @@
 # Shell
 
 
-## Resources
-
- - [The Bash Academy](http://www.bash.academy/)
- - [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
- - [BASH Programming](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
- - [RegExr](https://regexr.com/)
-
-
 ## Globals
 
 ```sh
