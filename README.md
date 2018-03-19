@@ -35,6 +35,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Example Google Style Python Docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
  - [Python Docstrings](http://epydoc.sourceforge.net/docstrings.html)
  - [Python Unicode HOWTO](https://docs.python.org/3.6/howto/unicode.html)
+ - [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
 
 ### HTML & CSS
 
