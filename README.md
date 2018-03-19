@@ -20,8 +20,9 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Python Module: os](https://docs.python.org/2/library/os.html)
  - [Python Module: shutil](https://docs.python.org/2/library/shutil.html)
  - [Python Module: turtle](https://docs.python.org/2/library/turtle.html)
- - [Python Module: urllib](https://docs.python.org/2/library/urllib.html)
  - [Python Module: json](https://docs.python.org/2/library/json.html)
+ - [Python Module: urllib](https://docs.python.org/2/library/urllib.html)
+ - [Python Module: urllib.parse](https://docs.python.org/3/library/urllib.parse.html)
  - [Python Langauge: Classes](https://docs.python.org/2.7/tutorial/classes.html)
  - [Python Langauge: Data Model](https://docs.python.org/2/reference/datamodel.html)
  - [Python Langauge: Dictionary](https://www.tutorialspoint.com/python/python_dictionary.htm)
@@ -33,6 +34,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [autopep8](https://pypi.python.org/pypi/autopep8/)
  - [Example Google Style Python Docstrings](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
  - [Python Docstrings](http://epydoc.sourceforge.net/docstrings.html)
+ - [Python Unicode HOWTO](https://docs.python.org/3.6/howto/unicode.html)
 
 ### HTML & CSS
 

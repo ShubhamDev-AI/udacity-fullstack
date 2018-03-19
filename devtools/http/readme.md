@@ -32,13 +32,14 @@ Example:
 
 ```
 
-https://en.wikipedia.org/wiki/Hydrogen_chloride#Chemistry
+https://en.wikipedia.org/wiki/Hydrogen_chloride#Chemistry?key=value
 
 ```
  - `https` is the **scheme**. See the [full list](http://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
  - `en.wikipedia.org` is the **hostname**
  - `/wiki/Hydrogen_chloride` is the **path**
  - `Chemistry` is the **fragment**
+ - `?key=value` **query parameters**
 
 
 ## Hostname
