@@ -23,6 +23,11 @@
  - [Reset Demystified from Git Blog](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
  - [Ancestry References from Git Book](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Ancestry-References)
  - [Working with Remotes from the Git book](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#_showing_your_remotes)
+ - [Git Branching - Rebasing from the Git Book](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+ - [Git Rebase from the Atlassian blog](https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase)
+ - [FIRST TIMERS ONLY](http://www.firsttimersonly.com/)
+
+
 ## Git Flow
 
 ```
@@ -170,22 +175,26 @@ The `.git` directory contains:
 
 #### reset
 
-`git reset <SHA>` - Reset (erase) commits [Docs](https://git-scm.com/docs/git-reset)
+`git reset <SHA|ref>` - Reset (erase) commits [Docs](https://git-scm.com/docs/git-reset)
 
-`git reset <SHA> --mixed` - Move changes to Working Directory
+`git reset <SHA|ref> --mixed` - Move changes to Working Directory
 
-`git reset <SHA> --soft` - Move changes to Staging Index
+`git reset <SHA|ref> --soft` - Move changes to Staging Index
 
-`git reset <SHA> --hard` - Move changes to Trash
+`git reset <SHA|ref> --hard` - Move changes to Trash
 
 
 #### remote
 
-`git remote` - List remote repositories [Docs](https://git-scm.com/docs/git-remote)
+[Docs](https://git-scm.com/docs/git-remote)
+
+`git remote` - List remote repositories
 
 `git remote -v` - List remotes with URL
 
-`git remote add <remote> <URL|SSH>` - Add remote with specified shortname (usually *origin*)
+`git remote add <remote> <URL|SSH>` - Add remote with specified shortname (*origin* for the source repo)
+
+`git remote rename <from-remote> <to-remote>` - Rename remote
 
 #### push
 
@@ -206,6 +215,14 @@ The `.git` directory contains:
 `git fetch` - Fetch remote commits from all branches without merging
 
 `git fetch <remote> <branch>` - Fetch commits for specified remote branch
+
+#### rebase
+
+[Docs](https://git-scm.com/docs/git-rebase)
+
+`git rebase <SHA|ref>` - Squash commits together starting with the specified base
+
+`git rebase -i <SHA|ref>` - Interactive (recommended)
 
 
 ## Commit Messages
@@ -288,10 +305,9 @@ Here's how we can refer to previous commits:
 
 *Git is a distributed version control system which means there is not one main repository of information. Each developer has a copy of the repository. So you can have a copy of the repository (which includes the published commits and version history) and your friend can also have a copy of the same repository. Each repository has the exact same information that the other ones have, there's no one repository that's the main one.*
 
-Local refs: `<remote-shortname>/<branch>`
+Local ref to remote branch: `<remote-shortname>/<branch>`
 
 Fetch changes and merge:
-
 ```
 git pull origin master
 ```
@@ -302,6 +318,9 @@ Fetch changes and merge manually:
 git fetch origin master
 git merge origin/master
 ```
+
+
+
 
 
 ## Terms
