@@ -61,6 +61,7 @@ nslookup google.com
 
 *All of the network traffic that computers send and receive — everything from web requests, to login sessions, to file sharing — is split up into messages called packets. Each packet has the IP addresses of the computer that sent it, and the computer that receives it. And (with the exception of some low-level packets, such as ping) it also has the port number for the sender and recipient. IP addresses distinguish computers; port numbers distinguish programs on those computers.*
 
+
 ## HTTP Protocol
 
 ### HTTP Request
@@ -107,6 +108,20 @@ Content-Length: 340
  - 5xx — Server error. Something went wrong on the server side.
 
 
+### Request Methods
+
+ - `GET` gets a resource
+ - `POST` creates or updates a resource
+ - `PUT` creates a new resource
+ - `PATCH` updates a resource
+ - `DELETE` deletes a resource
+ - `HEAD` is like `GET` but only return headers
+ - `OPTIONS` is used to find features supported by the server
+ - `TRACE` echoes back what the server received from the client
+
+[Official Spec](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+
+
 ### Headers
 
 *An HTTP response can include many headers. Each header is a line that starts with a keyword, such as Location or Content-type, followed by a colon and a value. Headers are a sort of metadata for the response. They aren't displayed by browsers or other clients; instead, they tell the client various information about the response.*
@@ -142,3 +157,21 @@ The browser should then resend the `Cookie` header in subsequent requests:
 ```
 Cookie: app_session=eyJpdiI6IjBOUkwyK1pcL2tP...KzdmTkN2bkZ4VVc2Qm0yNlhcL0R5bGc9PSIsIm1hYyI6ImI4MjAxMTJiMTQxZDM0M2MzOGJjZjk4NWJkNjBmMzNjNGYzYmIyMjUzYTliMGU5YTZjZmY2ZDgzMDQ4Njg0NTcifQ%3D%3D
 ```
+
+### HTTPS over TLS
+
+*When a browser and a server speak HTTPS, they're just speaking HTTP, but over an encrypted connection. The encryption follows a standard protocol called Transport Layer Security, or TLS for short. TLS provides some important guarantees for web security:*
+
+ - *It keeps the connection **private** by encrypting everything sent over it. Only the server and browser should be able to read what's being sent.*
+ - *It lets the browser **authenticate** the server. For instance, when a user accesses https://www.udacity.com/, they can be sure that the response they're seeing is really from Udacity's servers and not from an impostor.*
+ - *It helps protect the **integrity** of the data sent over that connection — checking that it has not been (accidentally or deliberately) modified or replaced.*
+
+*Note: TLS is also very often referred to by the older name SSL (Secure Sockets Layer). Technically, SSL is an older version of the encryption protocol. This course will talk about TLS because that's the current standard.*
+
+#### Keys and Certificates
+
+*The server-side configuration for TLS includes two important pieces of data: a private key and a public certificate. The private key is secret; it's held on the server and never leaves there. The certificate is sent to every browser that connects to that server via TLS. These two pieces of data are mathematically related to each other in a way that makes the encryption of TLS possible.*
+
+*The server's certificate is issued by an organization called a certificate authority (CA). The certificate authority's job is to make sure that the server really is who it says it is — for instance, that a certificate issued in the name of Heroku is actually being used by the Heroku organization and not by someone else.*
+
+*The role of a certificate authority is kind of like getting a document notarized. A notary public checks your ID and witnesses you sign a document, and puts their stamp on it to indicate that they did so.*
