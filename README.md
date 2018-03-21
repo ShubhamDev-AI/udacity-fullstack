@@ -81,3 +81,10 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Git Branching - Rebasing from the Git Book](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
  - [Git Rebase from the Atlassian blog](https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase)
  - [FIRST TIMERS ONLY](http://www.firsttimersonly.com/)
+
+### HTTP
+
+ - [Mozilla Developer Network's HTTP index page](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+ - [RFC 7230](https://tools.ietf.org/html/rfc7230)
+ - [standards documents for HTTP/2](https://http2.github.io/)
+ - [Let's Encrypt](https://letsencrypt.org/)
