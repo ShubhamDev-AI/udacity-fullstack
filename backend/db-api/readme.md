@@ -13,6 +13,7 @@ From within `psql`, you can run any SQL statement using the tables in the connec
  - `\dt+`: list tables plus additional information (notably, how big each table is on disk).
  - `\H`: switch between printing tables in plain text vs. HTML.
  - `{query} \watch`: Repeatedly execute the current query buffer
+ - `\q`: Quit psql
 
 [Commands Ref](https://www.postgresql.org/docs/9.4/static/app-psql.html)
 
