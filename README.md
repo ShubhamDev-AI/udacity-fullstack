@@ -8,6 +8,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Git](devtools/git/readme.md)
  - [HTTP](devtools/http/readme.md)
  - [Shell](devtools/shell/readme.md)
+ - [SQL](backend/sql/readme.md)
 
 
 ## Resources
@@ -88,3 +89,9 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [RFC 7230](https://tools.ietf.org/html/rfc7230)
  - [standards documents for HTTP/2](https://http2.github.io/)
  - [Let's Encrypt](https://letsencrypt.org/)
+
+
+ ### SQL
+
+  - [PostgreSQL Types](https://www.postgresql.org/docs/9.4/static/datatype.html)
+  - [PostgreSQL SELECT](https://www.postgresql.org/docs/9.4/static/sql-select.html)
