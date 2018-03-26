@@ -95,3 +95,4 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
   - [PostgreSQL Types](https://www.postgresql.org/docs/9.4/static/datatype.html)
   - [PostgreSQL SELECT](https://www.postgresql.org/docs/9.4/static/sql-select.html)
+  - [PostgreSQL psql](www.postgresql.org/docs/9.4/static/app-psql.html)
