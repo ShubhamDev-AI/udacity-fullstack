@@ -43,7 +43,7 @@ GROUP BY column_1
 HAVING aggr = 10
 ```
 
- - *where clauses* clauses define row restrictions using comparison operators: `=`, `<`, `>`, `<=`, `>=`, `!=`
+ - *where clauses* clauses define row restrictions using comparison operators: `=`, `<`, `>`, `<=`, `>=`, `!=`, `like`
  - *select clauses* limits, orders and groups results
    - `LIMIT {count}`: Return just the first count rows of the result table.
    - `LIMIT {count} OFFSET {skip}`: Return count rows starting after the first skip rows.
@@ -80,4 +80,24 @@ If the values are in the same order as the table's columns (starting with the fi
 ```sql
 INSERT INTO table_x
 VALUES ( val1, val2, ... );
+```
+
+### `Update`
+
+`UPDATE {table} SET {column}={value} {where clauses}`
+
+```sql
+UPDATE users
+SET name='Bobby'
+WHERE id=18
+```
+
+
+### `Delete`
+
+`DELETE FROM {table} {where clauses}`
+
+```sql
+DELETE FROM users
+WHERE id = 23
 ```

@@ -24,6 +24,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Python Module: json](https://docs.python.org/2/library/json.html)
  - [Python Module: urllib](https://docs.python.org/2/library/urllib.html)
  - [Python Module: urllib.parse](https://docs.python.org/3/library/urllib.parse.html)
+ - [Python Module: psycopg](http://initd.org/psycopg/docs/)
+ - [Python Module: bleach](http://bleach.readthedocs.io/en/latest/)
  - [Python Langauge: Classes](https://docs.python.org/2.7/tutorial/classes.html)
  - [Python Langauge: Data Model](https://docs.python.org/2/reference/datamodel.html)
  - [Python Langauge: Dictionary](https://www.tutorialspoint.com/python/python_dictionary.htm)
@@ -37,6 +39,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Python Docstrings](http://epydoc.sourceforge.net/docstrings.html)
  - [Python Unicode HOWTO](https://docs.python.org/3.6/howto/unicode.html)
  - [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
+ - [Python Database API Specification](https://www.python.org/dev/peps/pep-0249/)
 
 ### HTML & CSS
 
@@ -96,3 +99,4 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
   - [PostgreSQL Types](https://www.postgresql.org/docs/9.4/static/datatype.html)
   - [PostgreSQL SELECT](https://www.postgresql.org/docs/9.4/static/sql-select.html)
   - [PostgreSQL psql](www.postgresql.org/docs/9.4/static/app-psql.html)
+  - [Bobby Tables: A guide to preventing SQL injection](http://bobby-tables.com/)
