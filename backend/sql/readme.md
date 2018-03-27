@@ -84,6 +84,8 @@ VALUES ( val1, val2, ... );
 
 ### `Update`
 
+Update rows of a table.
+
 `UPDATE {table} SET {column}={value} {where clauses}`
 
 ```sql
@@ -95,9 +97,78 @@ WHERE id=18
 
 ### `Delete`
 
+Delete rows from a table.
+
 `DELETE FROM {table} {where clauses}`
 
 ```sql
 DELETE FROM users
 WHERE id = 23
 ```
+
+### `Create/Drop Database`
+
+Create a database.
+
+`CREATE DATABASE {name}`
+
+Delete a database.
+
+`DROP DATABASE [ IF EXISTS ] {name}`
+
+```sql
+CREATE DATABASE lusiadas;
+DROP DATABASE lusiadas;
+```
+
+### `Create/Drop Table`
+
+Create a database table.
+
+`CREATE TABLE [ IF NOT EXISTS ] {table_name}`
+```sql
+
+CREATE TABLE films (
+    code        char(5) CONSTRAINT firstkey PRIMARY KEY,
+    title       varchar(40) NOT NULL,
+    did         integer NOT NULL,
+    date_prod   date,
+    kind        varchar(10),
+    len         interval hour to minute
+);
+
+CREATE TABLE distributors (
+     did    integer PRIMARY KEY DEFAULT nextval('serial'),
+     name   varchar(40) NOT NULL CHECK (name <> '')
+);
+
+```
+Drop a database table.
+
+`DROP TABLE [ IF EXISTS ] {table_name}`
+
+```sql
+DROP TABLE films, distributors;
+```
+
+## Normalization
+
+Rules for normalized tables:
+
+### 1. Every row has the same number of columns.
+
+In practice, the database system won't let us literally have different numbers of columns in different rows. But if we have columns that are sometimes empty (null) and sometimes not, or if we stuff multiple values into a single field, we're bending this rule.
+
+### 2. There is a unique key and everything in a row says something about the key.
+
+The key may be one column or more than one. It may even be the whole row, as in the diet table. But we don't have duplicate rows in a table.
+
+More importantly, if we are storing non-unique facts — such as people's names — we distinguish them using a unique identifier such as a serial number. This makes sure that we don't combine two people's grades or parking tickets just because they have the same name.
+
+### 3. Facts that don't relate to the key belong in different tables.
+
+The example here was the items table, which had items, their locations, and the location's street addresses in it. The address isn't a fact about the item; it's a fact about the location. Moving it to a separate table saves space and reduces ambiguity, and we can always reconstitute the original table using a join.
+
+### 4. Tables shouldn't imply relationships that don't exist.
+
+The example here was the job_skills table, where a single row listed one of a person's technology skills (like 'Linux') and one of their language skills (like 'French'). This made it look like their Linux knowledge was specific to French, or vice versa ... when that isn't the case in the real world. Normalizing this involved splitting the tech skills and job skills into separate tables.

@@ -98,5 +98,11 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
   - [PostgreSQL Types](https://www.postgresql.org/docs/9.4/static/datatype.html)
   - [PostgreSQL SELECT](https://www.postgresql.org/docs/9.4/static/sql-select.html)
+  - [PostgreSQL CREATE DATABASE](https://www.postgresql.org/docs/9.4/static/sql-createdatabase.html)
+  - [PostgreSQL DROP DATABASE](https://www.postgresql.org/docs/9.4/static/sql-dropdatabase.html)
+  - [PostgreSQL DROP TABLE](https://www.postgresql.org/docs/9.4/static/sql-droptable.html)
+  - [PostgreSQL CREATE TABLE](https://www.postgresql.org/docs/9.4/static/sql-createtable.html)
+  - [PostgreSQL Subquery Expressions](https://www.postgresql.org/docs/9.4/static/functions-subquery.html)
+  - [PostgreSQL Value Expressions](https://www.postgresql.org/docs/9.4/static/sql-expressions.html)
   - [PostgreSQL psql](www.postgresql.org/docs/9.4/static/app-psql.html)
   - [Bobby Tables: A guide to preventing SQL injection](http://bobby-tables.com/)
