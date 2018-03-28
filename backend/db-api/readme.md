@@ -14,6 +14,8 @@ From within `psql`, you can run any SQL statement using the tables in the connec
  - `\H`: switch between printing tables in plain text vs. HTML.
  - `{query} \watch`: Repeatedly execute the current query buffer
  - `\q`: Quit psql
+ - `\l`: list all databases
+ - `\c {database}`: use/connect database
 
 [Commands Ref](https://www.postgresql.org/docs/9.4/static/app-psql.html)
 
