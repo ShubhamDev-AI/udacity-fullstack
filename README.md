@@ -26,6 +26,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Python Module: urllib.parse](https://docs.python.org/3/library/urllib.parse.html)
  - [Python Module: psycopg](http://initd.org/psycopg/docs/)
  - [Python Module: bleach](http://bleach.readthedocs.io/en/latest/)
+ - [Python Module: sqlalchemy](http://www.sqlalchemy.org/)
  - [Python Langauge: Classes](https://docs.python.org/2.7/tutorial/classes.html)
  - [Python Langauge: Data Model](https://docs.python.org/2/reference/datamodel.html)
  - [Python Langauge: Dictionary](https://www.tutorialspoint.com/python/python_dictionary.htm)
