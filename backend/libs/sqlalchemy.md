@@ -2,14 +2,16 @@
 
  - [Query API](http://docs.sqlalchemy.org/en/rel_0_9/orm/query.html)
 
-## Setup
-
-## Session
+## Database Setup
 
 ```py
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from database_setup import Base, Restaurant, MenuItem
+
+
+
 
 engine = create_engine('sqlite:///restaurantMenu.db')
 Base.metadata.bind=engine
@@ -22,7 +24,7 @@ session = DBSession()
 ```py
 myFirstRestaurant = Restaurant(name = "Pizza Palace")
 session.add(myFirstRestaurant)
-sesssion.commit()
+session.commit()
 
 cheesepizza = menuItem(name="Cheese Pizza", description = "Made with all natural ingredients and fresh mozzarella", course="Entree", price="$8.99", restaurant=myFirstRestaurant)
 session.add(cheesepizza)
