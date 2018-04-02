@@ -1,11 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for, flash, jsonify
 from restaurantmenu import RestaurantCRUD, MenuItemCRUD
-from html import \
-        HTML_LAYOUT, \
-        HTML_COMP_MENU_ITEM, \
-        HTML_RESTAURANT_MENU, \
-        HTML_COMP_RESTAURANT_ITEM, \
-        HTML_RESTAURANT_INDEX
 
 restCrud = RestaurantCRUD()
 menuCrud = MenuItemCRUD()
