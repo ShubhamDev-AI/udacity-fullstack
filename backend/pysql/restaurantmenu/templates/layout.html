@@ -2,11 +2,15 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lobster" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul>
+            <ul class="flash-messages">
             {% for message in messages %}
                 <li style="color: green; font-weight:bold;">{{ message }}</li>
             {% endfor %}
@@ -14,6 +18,8 @@
         {% endif %}
         {% endwith %}
 
-        {% block body %}{% endblock %}
+        <main class="main">
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
