@@ -1,5 +1,6 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from restaurantmenu import RestaurantCRUD
+
 import cgi
 
 HTML_LAYOUT = '''
@@ -17,6 +18,7 @@ HTML_LAYOUT = '''
 HTML_PAGE_INDEX = '''
 <h1>Restaurants</h1>
 <ul>{items}</ul>
+<a href="/restaurants/new">Add Restaurant</a>
 '''
 
 HTML_PAGE_EDIT = '''
@@ -24,6 +26,14 @@ HTML_PAGE_EDIT = '''
 <form method="POST" action="/restaurants/{id}/edit" enctype="multipart/form-data">
     <label>Name: <input type="text" name="name" value="{name}"></label>
     <button type="submit">Update</button>
+</form>
+'''
+
+HTML_PAGE_CREATE = '''
+<h1>Add Restaurant</h1>
+<form method="POST" action="/restaurants/new" enctype="multipart/form-data">
+    <label>Name: <input type="text" name="name" value="{name}"></label>
+    <button type="submit">Create</button>
 </form>
 '''
 
@@ -75,6 +85,18 @@ class webserverHandler(BaseHTTPRequestHandler):
             self.wfile.write(body.encode())
             return
 
+        # /restaurants/new
+        if len(parts) == 3 and parts[1] == 'restaurants' and parts[2] == 'new':
+
+            content = HTML_PAGE_CREATE.format(name='')
+            body = HTML_LAYOUT.format(title="Add Restaurant", content=content)
+
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(body.encode())
+            return
+
         # /restaurants/{id}/edit
         if len(parts) == 4 and parts[1] == 'restaurants' and parts[3] == 'edit':
 
@@ -113,10 +135,27 @@ class webserverHandler(BaseHTTPRequestHandler):
 
         self.send_error(404, 'File Not Found: %s' % self.path)
 
+
     def do_POST(self):
         parts = self.path.split('/')
         ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
         postvars = cgi.parse_multipart(self.rfile, pdict)
+
+        # /restaurants/new
+        if len(parts) == 3 and parts[1] == 'restaurants' and parts[2] == 'new':
+            try:
+                name = postvars.get('name')[0]
+                r = crud.new()
+                r.name = name
+                crud.create(r)
+
+                self.send_response(302)
+                self.send_header('Location', '/restaurants')
+                self.end_headers()
+                self.wfile.write("Created!".encode())
+            except (AttributeError, IndexError) as e:
+                self.send_error(400, 'Invalid form data: %s' % str(e))
+            return
 
         # /restaurants/{id}/edit
         if len(parts) == 4 and parts[1] == 'restaurants' and parts[3] == 'edit':

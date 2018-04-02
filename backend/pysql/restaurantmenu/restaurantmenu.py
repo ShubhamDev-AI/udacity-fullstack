@@ -31,6 +31,14 @@ class RestaurantCRUD:
         self.session.commit()
         return
 
+    def new(self):
+        return Restaurant()
+
+    def create(self, model):
+        self.session.add(model)
+        self.session.commit()
+        return
+
     def delete(self, model):
         self.session.delete(model)
         self.session.commit()
