@@ -75,7 +75,13 @@ def deleteMenuItem(r_id, m_id):
 def apiGetRestaurant(r_id):
     rest = restCrud.find(r_id)
     menuItems = menuCrud.forRestaurant(rest)
-    return jsonify(menuItems=[i.serialize for i in menuItems])
+    return jsonify(MenuItems=[i.serialize for i in menuItems])
+
+@app.route('/api/restaurants/<int:r_id>/menu-items/<int:m_id>')
+def apiGetMenuItem(r_id, m_id):
+    rest = restCrud.find(r_id)
+    menuItem = menuCrud.find(m_id)
+    return jsonify(MenuItem=menuItem.serialize)
 
 
 if __name__ == '__main__':
