@@ -9,6 +9,9 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [HTTP](devtools/http/readme.md)
  - [Shell](devtools/shell/readme.md)
  - [SQL](backend/sql/readme.md)
+ - [Lib SQLAlchemy](backend/libs/sqlalchemy.md)
+ - [Lib Flask](backend/libs/flask.md)
+ - [Lib sqlite3](backend/libs/sqlite3.md)
 
 
 ## Resources
