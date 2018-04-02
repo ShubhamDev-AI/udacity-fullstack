@@ -44,6 +44,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [`if __name__ == "__main__":`](http://ibiblio.org/g2swap/byteofpython/read/module-name.html)
  - [Python Decorators](http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/)
  - [Flask Quickstart](http://flask.pocoo.org/docs/0.10/quickstart/)
+ - [Flask Security](https://pythonhosted.org/Flask-Security/)
+ - [Flask Deployment Options](http://flask.pocoo.org/docs/0.10/deploying/)
 
 ### HTML & CSS
 
