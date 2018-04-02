@@ -31,3 +31,10 @@ class MenuItem(Base):
 
 engine = create_engine('sqlite:///restaurantmenu.db')
 Base.metadata.create_all(engine)
+
+def get_session():
+    # Create session and connect to DB
+    engine = create_engine('sqlite:///restaurantmenu.db')
+    Base.metadata.bind = engine
+    DBSession = sessionmaker(bind=engine)
+    return DBSession()

@@ -42,6 +42,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
  - [Python Database API Specification](https://www.python.org/dev/peps/pep-0249/)
  - [`if __name__ == "__main__":`](http://ibiblio.org/g2swap/byteofpython/read/module-name.html)
+ - [Python Decorators](http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/)
+ - [Flask Quickstart](http://flask.pocoo.org/docs/0.10/quickstart/)
 
 ### HTML & CSS
 

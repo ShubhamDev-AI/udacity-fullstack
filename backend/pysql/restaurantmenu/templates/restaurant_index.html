@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Restaurants{% endblock %}
+{% block body %}
+<h1>Restaurants</h1>
+<ul>
+    {% for rest in rests %}
+    <li>
+        {{ rest.name }}
+        <a href="{{ url_for('restaurantDetail', r_id=rest.id) }}">Menu</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

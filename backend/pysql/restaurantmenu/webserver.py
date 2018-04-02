@@ -1,57 +1,14 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from restaurantmenu import RestaurantCRUD
+from html import \
+    HTML_LAYOUT, \
+    HTML_RESTAURANT_INDEX, \
+    HTML_RESTAURANT_CREATE, \
+    HTML_RESTAURANT_EDIT, \
+    HTML_RESTAURANT_DELETE, \
+    HTML_COMP_RESTAURANT_ITEM
 
 import cgi
-
-HTML_LAYOUT = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{title}</title>
-    </head>
-    <body>
-        {content}
-    </body>
-</html>
-'''
-
-HTML_PAGE_INDEX = '''
-<h1>Restaurants</h1>
-<ul>{items}</ul>
-<a href="/restaurants/new">Add Restaurant</a>
-'''
-
-HTML_PAGE_EDIT = '''
-<h1>Edit Restaurant {id}</h1>
-<form method="POST" action="/restaurants/{id}/edit" enctype="multipart/form-data">
-    <label>Name: <input type="text" name="name" value="{name}"></label>
-    <button type="submit">Update</button>
-</form>
-'''
-
-HTML_PAGE_CREATE = '''
-<h1>Add Restaurant</h1>
-<form method="POST" action="/restaurants/new" enctype="multipart/form-data">
-    <label>Name: <input type="text" name="name" value="{name}"></label>
-    <button type="submit">Create</button>
-</form>
-'''
-
-HTML_PAGE_DELETE = '''
-<h1>Delete Restaurant {id}?</h1>
-<form method="POST" action="/restaurants/{id}/delete" enctype="multipart/form-data">
-    <p>Are you sure you want to delete '{name}'?</p>
-    <button type="submit">Delete</button>
-</form>
-'''
-
-HTML_COMP_ITEM = '''
-<li>
-    {name}
-    <a href="/restaurants/{id}/edit">Edit</a>
-    <a href="/restaurants/{id}/delete">Delete</a>
-</li>
-'''
 
 crud = RestaurantCRUD()
 
@@ -74,9 +31,9 @@ class webserverHandler(BaseHTTPRequestHandler):
             items = ""
             restaurants = crud.all()
             for r in restaurants:
-                items += HTML_COMP_ITEM.format(name=r.name, id=r.id)
+                items += HTML_COMP_RESTAURANT_ITEM.format(name=r.name, id=r.id)
 
-            content = HTML_PAGE_INDEX.format(items=items)
+            content = HTML_RESTAURANT_INDEX.format(items=items)
             body = HTML_LAYOUT.format(title="Restaurants", content=content)
 
             self.send_response(200)
@@ -88,7 +45,7 @@ class webserverHandler(BaseHTTPRequestHandler):
         # /restaurants/new
         if len(parts) == 3 and parts[1] == 'restaurants' and parts[2] == 'new':
 
-            content = HTML_PAGE_CREATE.format(name='')
+            content = HTML_RESTAURANT_CREATE.format(name='')
             body = HTML_LAYOUT.format(title="Add Restaurant", content=content)
 
             self.send_response(200)
@@ -106,7 +63,7 @@ class webserverHandler(BaseHTTPRequestHandler):
                 self.send_error(404, 'Restaurant not found: %s' % parts[2])
                 return
 
-            content = HTML_PAGE_EDIT.format(name=r.name, id=r.id)
+            content = HTML_RESTAURANT_EDIT.format(name=r.name, id=r.id)
             body = HTML_LAYOUT.format(title="Edit Restaurant", content=content)
 
             self.send_response(200)
@@ -124,7 +81,7 @@ class webserverHandler(BaseHTTPRequestHandler):
                 self.send_error(404, 'Restaurant not found: %s' % parts[2])
                 return
 
-            content = HTML_PAGE_DELETE.format(name=r.name, id=r.id)
+            content = HTML_RESTAURANT_DELETE.format(name=r.name, id=r.id)
             body = HTML_LAYOUT.format(title="Edit Restaurant", content=content)
 
             self.send_response(200)

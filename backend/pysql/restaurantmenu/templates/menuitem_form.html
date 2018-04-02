@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+    {% if action == 'create' %}
+    Create Menu Item
+    {% else %}
+    Update Menu Item
+    {% endif %}
+{% endblock %}
+{% block body %}
+
+    {% if action == 'create' %}
+    <h1>Add Menu Item</h1>
+    <form action="{{ url_for('createMenuItem', r_id=rest.id) }}" method="POST" enctype="multipart/form-data">
+    {% else %}
+    <h1>Update Menu Item {{ item.id }}</h1>
+    <form action="{{ url_for('editMenuItem', r_id=rest.id, m_id=item.id) }}" method="POST" enctype="multipart/form-data">
+    {% endif %}
+
+        <label>Name: <input type="text" name="name" value="{{ item.name }}"></label><br>
+        <label>Price: <input type="text" name="price" value="{{ item.price }}"></label><br>
+        <label>Description: <textarea name="description" cols="30" rows="10">{{ item.description }}</textarea></label><br>
+        {% if action == 'create' %}
+        <button type="submit">Add Menu Item</button>
+        {% else %}
+        <button type="submit">Update Menu Item</button>
+        {% endif %}
+    </form>
+    <a href="{{ url_for('restaurantDetail', r_id=rest.id) }}">Cancel</a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Delete Menu Item{% endblock %}
+{% block body %}
+
+<h1>Delete Menu Item</h1>
+<form method="POST" action="{{ url_for('deleteMenuItem', r_id=rest.id, m_id=item.id) }}" enctype="multipart/form-data">
+    <p>Are you sure you want to delete '{{ item.name }}' from '{{ rest.name }}'?</p>
+    <button type="submit">Delete</button>
+</form>
+<a href="{{ url_for('restaurantDetail', r_id=rest.id) }}">Cancel</a>
+
+{% endblock %}
