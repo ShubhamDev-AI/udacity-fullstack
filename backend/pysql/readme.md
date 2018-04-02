@@ -46,17 +46,16 @@ for item in items:
 ### Update
 
 ```py
-veggieBurgers = session.query(MenuItem).filter_by(name= 'Veggie Burger')
-for veggieBurger in veggieBurgers:
-    print veggieBurger.id
-    print veggieBurger.price
-    print veggieBurger.restaurant.name
-    print "\n"
-
-
 UrbanVeggieBurger = session.query(MenuItem).filter_by(id=8).one()
 UrbanVeggieBurger.price = '$2.99'
 session.add(UrbanVeggieBurger)
+session.commit()
+```
+```py
+session.query(MenuItem) \
+       .filter_by(id=8).one() \
+       .update({'price': '$2.99'})
+
 session.commit()
 ```
 

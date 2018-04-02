@@ -41,7 +41,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Python Unicode HOWTO](https://docs.python.org/3.6/howto/unicode.html)
  - [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
  - [Python Database API Specification](https://www.python.org/dev/peps/pep-0249/)
- - [if __name__ == "__main__":](http://ibiblio.org/g2swap/byteofpython/read/module-name.html)
+ - [`if __name__ == "__main__":`](http://ibiblio.org/g2swap/byteofpython/read/module-name.html)
 
 ### HTML & CSS
 

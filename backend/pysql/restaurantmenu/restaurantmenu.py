@@ -1,20 +1,37 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Restaurant, MenuItem
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
-# make a database session
+class RestaurantCRUD:
 
-engine = create_engine('sqlite:///restaurantmenu.db')
-Base.metadata.bind = engine
-DBSession = sessionmaker(bind = engine)
-session = DBSession()
+    def __init__(self):
+        # Create session and connect to DB
+        engine = create_engine('sqlite:///restaurantmenu.db')
+        Base.metadata.bind = engine
+        DBSession = sessionmaker(bind=engine)
+        self.session = DBSession()
 
-# add new restaurant entry
+    def query(self):
+        return self.session.query(Restaurant)
 
-restaurant = Restaurant(name = "Pizza Palace")
-session.add(restaurant)
-session.commit()
+    def all(self):
+        res = self.query() \
+                .order_by(Restaurant.name) \
+                .all()
+        return res
 
-# query all restaurants
+    def find(self, id):
+        res = self.query() \
+                .filter(Restaurant.id == id) \
+                .first()
+        return res
 
-restaurants = session.query(Restaurant).all()
+    def update(self, model):
+        self.session.add(model)
+        self.session.commit()
+        return
+
+    def delete(self, model):
+        self.session.delete(model)
+        self.session.commit()
+        return
