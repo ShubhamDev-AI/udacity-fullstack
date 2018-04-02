@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, jsonify
 from restaurantmenu import RestaurantCRUD, MenuItemCRUD
 from html import \
         HTML_LAYOUT, \
@@ -69,6 +69,13 @@ def deleteMenuItem(r_id, m_id):
         return redirect(url_for('restaurantDetail', r_id=r_id))
 
     return render_template('menuitem_delete.html', rest=rest, item=item)
+
+
+@app.route('/api/restaurants/<int:r_id>')
+def apiGetRestaurant(r_id):
+    rest = restCrud.find(r_id)
+    menuItems = menuCrud.forRestaurant(rest)
+    return jsonify(menuItems=[i.serialize for i in menuItems])
 
 
 if __name__ == '__main__':
