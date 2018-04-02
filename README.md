@@ -2,6 +2,16 @@
 
 My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
+## Projects
+
+ - Movie Trailer Website (Python Fundamentals)
+   - repo: [christiaan-lombard/udacityproject-movie-trailer-website](https://github.com/christiaan-lombard/udacityproject-movie-trailer-website)
+ - Portfolio (HTML & CSS)
+   - repo: [christiaan-lombard/udacityproject-portfolio](https://github.com/christiaan-lombard/udacityproject-portfolio)
+ - Logs Analysis (Postgres & Python)
+   - repo: [christiaan-lombard/udacityproject-logs-analysis](https://github.com/christiaan-lombard/udacityproject-logs-analysis)
+
+
 
 ## Notes
 
@@ -115,3 +125,9 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
   - [PostgreSQL Value Expressions](https://www.postgresql.org/docs/9.4/static/sql-expressions.html)
   - [PostgreSQL psql](www.postgresql.org/docs/9.4/static/app-psql.html)
   - [Bobby Tables: A guide to preventing SQL injection](http://bobby-tables.com/)
+
+
+### Security
+ - [Hashing vs. Encrypting](https://www.darkreading.com/safely-storing-user-passwords-hashing-vs-encrypting/a/d-id/1269374)
+ - [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
+ - [Session hijacking](https://en.wikipedia.org/wiki/Session_hijacking)

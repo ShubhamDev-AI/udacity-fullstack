@@ -71,6 +71,7 @@ def apiGetRestaurant(r_id):
     menuItems = menuCrud.forRestaurant(rest)
     return jsonify(MenuItems=[i.serialize for i in menuItems])
 
+
 @app.route('/api/restaurants/<int:r_id>/menu-items/<int:m_id>')
 def apiGetMenuItem(r_id, m_id):
     rest = restCrud.find(r_id)
