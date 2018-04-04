@@ -72,7 +72,7 @@ class MenuItemCRUD:
 
     def new(self, restaurant_id):
         return MenuItem(name="", price="$1.00", \
-            description="", restaurant_id=restaurant_id)
+            description="", restaurant_id=restaurant_id, course="")
 
     def create(self, model):
         session.add(model)
