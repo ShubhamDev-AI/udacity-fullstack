@@ -1,4 +1,4 @@
-from database_setup import Base, Restaurant, MenuItem, get_session
+from database_setup import Base, Restaurant, MenuItem, User, get_session
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
@@ -85,3 +85,27 @@ class MenuItemCRUD:
         return
 
 
+class UserCRUD:
+
+    def query(self):
+        return session.query(MenuItem)
+
+    def new(self):
+        return User(name='', email='')
+
+    def create(self, model):
+        session.add(model)
+        session.commit()
+        return
+
+    def find(self, id):
+        res = self.query() \
+                .filter(User.id == id) \
+                .first()
+        return res
+
+    def findByEmail(self, email):
+        res = self.query() \
+                .filter(User.email == email) \
+                .first()
+        return res

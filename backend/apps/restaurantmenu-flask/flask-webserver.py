@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for, flash, jsonify, make_response
 from flask import session as login_session
-from restaurantmenu import RestaurantCRUD, MenuItemCRUD
+from restaurantmenu import RestaurantCRUD, MenuItemCRUD, UserCRUD
 
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 
@@ -8,6 +8,7 @@ import random, string, httplib2, json, requests
 
 restCrud = RestaurantCRUD()
 menuCrud = MenuItemCRUD()
+userCrud = UserCRUD()
 
 app = Flask(__name__)
 
@@ -148,6 +149,10 @@ def restaurantIndex():
 @app.route('/')
 @app.route('/restaurants/new', methods=['GET', 'POST'])
 def createRestaurant():
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.new()
     rest.name = ''
 
@@ -163,6 +168,10 @@ def createRestaurant():
 @app.route('/')
 @app.route('/restaurants/<int:r_id>/edit', methods=['GET', 'POST'])
 def editRestaurant(r_id):
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.find(r_id)
 
     if request.method == 'POST':
@@ -177,6 +186,10 @@ def editRestaurant(r_id):
 @app.route('/')
 @app.route('/restaurants/<int:r_id>/delete', methods=['GET', 'POST'])
 def deleteRestaurant(r_id):
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.find(r_id)
 
     if request.method == 'POST':
@@ -196,6 +209,10 @@ def restaurantDetail(r_id):
 # create menu item form
 @app.route('/restaurants/<int:r_id>/menu-items/new', methods=['GET', 'POST'])
 def createMenuItem(r_id):
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.find(r_id)
     item = menuCrud.new(r_id)
 
@@ -213,6 +230,10 @@ def createMenuItem(r_id):
 # edit menu item form
 @app.route('/restaurants/<int:r_id>/menu-items/<int:m_id>/edit', methods=['GET', 'POST'])
 def editMenuItem(r_id, m_id):
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.find(r_id)
     item = menuCrud.find(m_id)
 
@@ -230,6 +251,10 @@ def editMenuItem(r_id, m_id):
 # delete menu item form
 @app.route('/restaurants/<int:r_id>/menu-items/<int:m_id>/delete', methods=['GET', 'POST'])
 def deleteMenuItem(r_id, m_id):
+
+    if 'username' not in login_session:
+        return redirect(url_for('showLogin'))
+
     rest = restCrud.find(r_id)
     item = menuCrud.find(m_id)
 
@@ -255,6 +280,30 @@ def apiGetMenuItem(r_id, m_id):
     menuItem = menuCrud.find(m_id)
     return jsonify(MenuItem=menuItem.serialize)
 
+
+# User Helper Functions
+
+
+def createUser(login_session):
+    newUser = User(name=login_session['username'], email=login_session[
+                   'email'], picture=login_session['picture'])
+    session.add(newUser)
+    session.commit()
+    user = session.query(User).filter_by(email=login_session['email']).one()
+    return user.id
+
+
+def getUserInfo(user_id):
+    user = session.query(User).filter_by(id=user_id).one()
+    return user
+
+
+def getUserID(email):
+    try:
+        user = session.query(User).filter_by(email=email).one()
+        return user.id
+    except:
+        return None
 
 
 ##### RUN APP #####
