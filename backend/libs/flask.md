@@ -81,7 +81,14 @@ from flask import request
 
 ### Redirect
 
+### JSON Response
+
 ### Static Files
 
-
 ## Auth
+
+### Hash and Verify Passwords
+
+### Basic Auth
+
+### Token Auth
