@@ -12,7 +12,7 @@
     <h1>Add Menu Item</h1>
     <form action="{{ url_for('createMenuItem', r_id=rest.id) }}" method="POST" enctype="multipart/form-data">
     {% else %}
-    <h1>Update Menu Item {{ item.id }}</h1>
+    <h1>Update Menu Item</h1>
     <form action="{{ url_for('editMenuItem', r_id=rest.id, m_id=item.id) }}" method="POST" enctype="multipart/form-data">
     {% endif %}
 

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+    {% if action == 'create' %}
+    Create Restaurant
+    {% else %}
+    Update Restaurant
+    {% endif %}
+{% endblock %}
+{% block body %}
+
+    {% if action == 'create' %}
+    <h1>Add Restaurant</h1>
+    <form action="{{ url_for('createRestaurant') }}" method="POST" enctype="multipart/form-data">
+    {% else %}
+    <h1>Update Restaurant</h1>
+    <form action="{{ url_for('editRestaurant', r_id=rest.id) }}" method="POST" enctype="multipart/form-data">
+    {% endif %}
+        <label>Name: <input type="text" name="name" value="{{ rest.name }}"></label><br>
+        {% if action == 'create' %}
+        <button type="submit">Add Restaurant</button>
+        {% else %}
+        <button type="submit">Update Restaurant</button>
+        {% endif %}
+    </form>
+    <a href="{{ url_for('restaurantIndex') }}">Cancel</a>
+
+{% endblock %}

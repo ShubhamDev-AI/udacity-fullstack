@@ -7,8 +7,12 @@
     <li>
         {{ rest.name }}
         <a href="{{ url_for('restaurantDetail', r_id=rest.id) }}">Menu</a>
+        <a href="{{ url_for('editRestaurant', r_id=rest.id) }}">Edit</a>
+        <a href="{{ url_for('deleteRestaurant', r_id=rest.id) }}">Delete</a>
     </li>
     {% endfor %}
 </ul>
+
+<a href="{{ url_for('createRestaurant') }}">Add Restaurant</a>
 
 {% endblock %}
