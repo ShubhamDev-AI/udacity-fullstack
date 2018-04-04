@@ -19,6 +19,17 @@
         <label>Name: <input type="text" name="name" value="{{ item.name }}"></label><br>
         <label>Price: <input type="text" name="price" value="{{ item.price }}"></label><br>
         <label>Description: <textarea name="description" cols="30" rows="10">{{ item.description }}</textarea></label><br>
+
+        <label>
+            Course
+            <select name="course">
+                <option value="Appetizer" {% if item.course == 'Appetizer'%}selected{%endif%}>Appetizer</option>
+                <option value="Entree" {% if item.course == 'Entree'%}selected{%endif%}>Entree</option>
+                <option value="Dessert" {% if item.course == 'Dessert'%}selected{%endif%}>Dessert</option>
+                <option value="Beverage" {% if item.course == 'Appetizer'%}selected{%endif%}>Appetizer</option>
+            </select>
+        </label><br>
+
         {% if action == 'create' %}
         <button type="submit">Add Menu Item</button>
         {% else %}

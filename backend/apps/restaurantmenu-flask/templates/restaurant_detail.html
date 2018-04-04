@@ -7,6 +7,7 @@
         <li>
             <strong>{{ item.name }}</strong> {{ item.price }}<br>
             {{ item.description }}<br>
+            <small>{{ item.course }}</small><br>
             <a href="{{ url_for('editMenuItem', r_id=rest.id, m_id=item.id) }}">Edit</a>
             <a href="{{ url_for('deleteMenuItem', r_id=rest.id, m_id=item.id) }}">Delete</a>
         </li>

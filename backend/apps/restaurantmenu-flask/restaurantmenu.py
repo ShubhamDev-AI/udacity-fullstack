@@ -54,6 +54,7 @@ class MenuItemCRUD:
     def forRestaurant(self, rest):
         res = self.query() \
                 .filter(MenuItem.restaurant_id == rest.id) \
+                .order_by(MenuItem.course) \
                 .order_by(MenuItem.name) \
                 .all()
         return res
