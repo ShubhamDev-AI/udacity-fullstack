@@ -19,6 +19,12 @@
                     <li><a href="{{ url_for('showLogin') }}">Login</a></li>
                 </ul>
             </nav>
+            {% if session['username'] %}
+            <p>Logged in as <strong>{{ session['username'] }}</strong></p>
+            {% else %}
+            <p>Not logged in.</p>
+            {% endif %}
+            <p></p>
         </header>
 
 
