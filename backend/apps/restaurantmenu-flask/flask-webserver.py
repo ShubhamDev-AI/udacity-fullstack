@@ -91,9 +91,19 @@ def googleOAuthCallback():
 
     data = answer.json()
 
-    login_session['username'] = data['name']
-    login_session['picture'] = data['picture']
-    login_session['email'] = data['email']
+    # get or create the user
+    user = userCrud.findByEmail(data['email'])
+    if user == None:
+        user = userCrud.new()
+        user.email = data['email']
+        user.name = data['name']
+        user.picture = data['picture']
+        userCrud.create(user)
+
+    login_session['username'] = user.name
+    login_session['picture'] = user.picture
+    login_session['email'] = user.email
+    login_session['user_id'] = user.id
 
     output = ''
     output += '<h1>Welcome, '
