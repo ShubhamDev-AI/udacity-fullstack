@@ -77,6 +77,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
  - [BASH Programming](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
  - [RegExr](https://regexr.com/)
+ - [cURL](http://curl.haxx.se/docs/manpage.html)
 
  ### Git
 
@@ -128,6 +129,12 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
 
 ### Security
+
  - [Hashing vs. Encrypting](https://www.darkreading.com/safely-storing-user-passwords-hashing-vs-encrypting/a/d-id/1269374)
  - [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
  - [Session hijacking](https://en.wikipedia.org/wiki/Session_hijacking)
+
+### APIs
++
+ - [Dissertation on REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+ - [REST, where’s my state?](https://ruben.verborgh.org/blog/2012/08/24/rest-wheres-my-state/)
