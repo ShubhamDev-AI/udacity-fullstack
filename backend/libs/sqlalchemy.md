@@ -31,7 +31,7 @@ session.add(cheesepizza)
 session.commit()
 ```
 
-## Read
+## Query
 
 ```py
 firstResult = session.query(Restaurant).first()
@@ -40,6 +40,14 @@ firstResult.name
 items = session.query(MenuItem).all()
 for item in items:
     print item.name
+```
+
+### Order By
+
+```py
+latest = session.query(MenuItem) \
+                .order_by(desc(MenuItem.created_at))
+                .all()
 ```
 
 ## Update

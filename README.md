@@ -135,6 +135,7 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Session hijacking](https://en.wikipedia.org/wiki/Session_hijacking)
 
 ### APIs
-+
+
  - [Dissertation on REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
  - [REST, where’s my state?](https://ruben.verborgh.org/blog/2012/08/24/rest-wheres-my-state/)
+ - [The Difference Between URLs and URIs](https://danielmiessler.com/study/url-uri/)
