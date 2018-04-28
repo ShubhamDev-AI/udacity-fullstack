@@ -134,8 +134,15 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
  - [Session hijacking](https://en.wikipedia.org/wiki/Session_hijacking)
 
-### APIs
+### API Concepts
 
  - [Dissertation on REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
  - [REST, where’s my state?](https://ruben.verborgh.org/blog/2012/08/24/rest-wheres-my-state/)
  - [The Difference Between URLs and URIs](https://danielmiessler.com/study/url-uri/)
+
+### APIs
+
+ - [Google Streetview Image](https://developers.google.com/maps/documentation/streetview/)
+ - [The New York Times API](https://developer.nytimes.com/)
+ - [MediaWiki API](https://www.mediawiki.org/wiki/API:Web_APIs_hub)
+ - [MediaWiki API CORS](https://www.mediawiki.org/wiki/API:Cross-site_requests)
