@@ -7,13 +7,15 @@
     <title>Cat Clicker KO</title>
 </head>
 <body>
-    <ul class="cat-list"></ul>
-    <div class="cat">
-        <h2 class="cat-name" data-bind="text: currentCat().name"></h2>
-        <p class="cat-level" data-bind="text: currentCat().level"></p>
-        <div class="cat-count" data-bind="text: currentCat().clickCount"></div>
-        <img class="cat-img" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
-        <ul class="cat-nicknames-list" data-bind="foreach: currentCat().nicknames">
+    <ul class="cat-list" data-bind="foreach: catList">
+        <li data-bind="click: $parent.select, text: name"></li>
+    </ul>
+    <div class="cat" data-bind="with: currentCat">
+        <h2 class="cat-name" data-bind="text: name"></h2>
+        <p class="cat-level" data-bind="text: level"></p>
+        <div class="cat-count" data-bind="text: clickCount"></div>
+        <img class="cat-img" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+        <ul class="cat-nicknames-list" data-bind="foreach: nicknames">
             <li data-bind="text: $data"></li>
         </ul>
     </div>
