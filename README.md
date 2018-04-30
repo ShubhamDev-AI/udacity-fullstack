@@ -10,18 +10,28 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
    - repo: [christiaan-lombard/udacityproject-portfolio](https://github.com/christiaan-lombard/udacityproject-portfolio)
  - Logs Analysis (Postgres & Python)
    - repo: [christiaan-lombard/udacityproject-logs-analysis](https://github.com/christiaan-lombard/udacityproject-logs-analysis)
+ - Item Catalog (Python - Flask & SQLAlchemy)
+   - repo: [christiaan-lombard/udacityproject-item-catalog](https://github.com/christiaan-lombard/udacityproject-item-catalog)
 
+## Modules
 
-
-## Notes
-
- - [Git](devtools/git/readme.md)
- - [HTTP](devtools/http/readme.md)
- - [Shell](devtools/shell/readme.md)
- - [SQL](backend/sql/readme.md)
- - [Lib SQLAlchemy](backend/libs/sqlalchemy.md)
- - [Lib Flask](backend/libs/flask.md)
- - [Lib sqlite3](backend/libs/sqlite3.md)
+ - [Fundamentals](fundamentals)
+   - Python, HTML and CSS basics
+ - [Devtools](devtools)
+   - HTTP Protocol, Git and Shell
+   - Notes:
+     - [Git](devtools/git/readme.md)
+     - [HTTP](devtools/http/readme.md)
+     - [Shell](devtools/shell/readme.md)
+ - [Backend](backend)
+   - Python HTTP servers with SQLAlchemy and Flask
+   - Notes:
+     - [SQL](backend/sql/readme.md)
+     - [Lib SQLAlchemy](backend/libs/sqlalchemy.md)
+     - [Lib Flask](backend/libs/flask.md)
+     - [Lib sqlite3](backend/libs/sqlite3.md)
+ - [Frontend](frontend)
+   - Javascript
 
 
 ## Resources
