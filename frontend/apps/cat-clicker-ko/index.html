@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cat Clicker KO</title>
+</head>
+<body>
+    <ul class="cat-list"></ul>
+    <div class="cat">
+        <h2 class="cat-name" data-bind="text: currentCat().name"></h2>
+        <p class="cat-level" data-bind="text: currentCat().level"></p>
+        <div class="cat-count" data-bind="text: currentCat().clickCount"></div>
+        <img class="cat-img" alt="cute cat" data-bind="click: incrementCounter, attr: {src: currentCat().imgSrc}">
+        <ul class="cat-nicknames-list" data-bind="foreach: currentCat().nicknames">
+            <li data-bind="text: $data"></li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

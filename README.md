@@ -31,7 +31,10 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
      - [Lib Flask](backend/libs/flask.md)
      - [Lib sqlite3](backend/libs/sqlite3.md)
  - [Frontend](frontend)
-   - Javascript
+   - Javascript with organisational (MVO) frameworks Knockout JS
+   - Notes:
+     - [MVO - Model View *Octopus](frontend/mvo/readme.md)
+     - [Lib Knockout JS](frontend/libs/knockout.md)
 
 
 ## Resources
