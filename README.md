@@ -12,6 +12,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
    - repo: [christiaan-lombard/udacityproject-logs-analysis](https://github.com/christiaan-lombard/udacityproject-logs-analysis)
  - Item Catalog (Python - Flask & SQLAlchemy)
    - repo: [christiaan-lombard/udacityproject-item-catalog](https://github.com/christiaan-lombard/udacityproject-item-catalog)
+ - Neighborhood Map (KnockoutJS, RxJS Observables)
+   - repo: [christiaan-lombard/udacityproject-neighborhood-map](https://github.com/christiaan-lombard/udacityproject-neighborhood-map)
 
 ## Modules
 
@@ -156,6 +158,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 ### APIs
 
  - [Google Streetview Image](https://developers.google.com/maps/documentation/streetview/)
+ - [Google Maps JS](https://developers.google.com/maps/documentation/javascript/reference)
+ - [Snazzymaps - Google Maps Map Styles](https://snazzymaps.com/)
  - [The New York Times API](https://developer.nytimes.com/)
  - [MediaWiki API](https://www.mediawiki.org/wiki/API:Web_APIs_hub)
  - [MediaWiki API CORS](https://www.mediawiki.org/wiki/API:Cross-site_requests)
