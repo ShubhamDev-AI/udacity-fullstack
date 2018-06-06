@@ -22,21 +22,25 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [Devtools](devtools)
    - HTTP Protocol, Git and Shell
    - Notes:
-     - [Git](devtools/git/readme.md)
-     - [HTTP](devtools/http/readme.md)
-     - [Shell](devtools/shell/readme.md)
+     - [Git](devtools/git.md)
+     - [HTTP](devtools/http.md)
+     - [Shell](devtools/shell.md)
  - [Backend](backend)
    - Python HTTP servers with SQLAlchemy and Flask
    - Notes:
-     - [SQL](backend/sql/readme.md)
-     - [Lib SQLAlchemy](backend/libs/sqlalchemy.md)
-     - [Lib Flask](backend/libs/flask.md)
-     - [Lib sqlite3](backend/libs/sqlite3.md)
+     - [SQL](backend/sql.md)
+     - [Lib SQLAlchemy](backend/sqlalchemy.md)
+     - [Lib Flask](backend/flask.md)
+     - [Lib sqlite3](backend/sqlite3.md)
  - [Frontend](frontend)
    - Javascript with organisational (MVO) frameworks Knockout JS
    - Notes:
-     - [MVO - Model View *Octopus](frontend/mvo/readme.md)
-     - [Lib Knockout JS](frontend/libs/knockout.md)
+     - [MVO - Model View *Octopus](frontend/mvo.md)
+     - [Lib Knockout JS](frontend/knockout.md)
+ - [Deploy](webservers)
+   - Deploying to Linux Servers
+   - Notes:
+     - [Vagrant](deploy/vagrant.md)
 
 
 ## Resources
@@ -163,3 +167,8 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
  - [The New York Times API](https://developer.nytimes.com/)
  - [MediaWiki API](https://www.mediawiki.org/wiki/API:Web_APIs_hub)
  - [MediaWiki API CORS](https://www.mediawiki.org/wiki/API:Cross-site_requests)
+
+ ### Linux
+
+  - [DistroWatch](https://distrowatch.com/)
+  - [Comparison of Linux distributions - Wiki](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions)
