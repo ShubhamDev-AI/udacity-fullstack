@@ -172,3 +172,4 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 
   - [DistroWatch](https://distrowatch.com/)
   - [Comparison of Linux distributions - Wiki](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions)
+  - [Bash Startup Files](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
