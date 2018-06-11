@@ -39,10 +39,10 @@ A list of sources for installing packages/apps can be found at `/etc/apt/sources
 Find Ubuntu Trusty packages at: [https://packages.ubuntu.com/trusty/](https://packages.ubuntu.com/trusty/)
 
  - `cat /etc/apt/sources.list` - List sources
- - `sudo apt-get update` - Update package source list
- - `sudo apt-get upgrade` - Upgrade (update) installed packages
- - `sudo apt-get autoremove` - Remove unused packages
- - `sudo apt-get install {package_name}` - Install package
+ - `apt-get update` - Update package source list
+ - `apt-get upgrade` - Upgrade (update) installed packages
+ - `apt-get autoremove` - Remove unused packages
+ - `apt-get install {package_name}` - Install package
 
 ### Manuals
 
@@ -83,18 +83,44 @@ Unknown devices as well as nonexistent idle and login times aredisplayed as sing
 
 ## Users
 
-[adduser(8) - Linux man page](https://linux.die.net/man/8/adduser)
+*A user or account of a system is uniquely identified by a numerical number called the UID (unique identification number). There are two types of users – the root or super user and normal users. A root or super user can access all the files, while the normal user has limited access to files. A super user can add, delete and modify a user account. The full account information is stored in the `/etc/passwd` file and a hash password is stored in the file `/etc/shadow`. Some operations on a user account are discussed below.* - [Linux System Administration](https://opensourceforu.com/2017/02/linuxsusadmin/)
 
- - `sudo useradd {username}` - Create a new user or update default new user information
- - `sudo passwd -e {username}` - Expire a user's password
+ - `useradd {user}` - Create a new user or update default new user information [[man]](https://linux.die.net/man/8/useradd)
+   - `useradd -c “Anirban Choudhury” anirban` - Specifying a user’s full name when creating a user
+   - `useradd -u 1036 anirban` - Creating a user with the UID
+   - `useradd –d /home/test anirban` - Creating a user with non-default home directory
+   - `useradd -g "head" -G "faculty" anirban` - Adding a user to a primary group and supplementary group
+ - `passwd {user}` - Changes passwords for user accounts [[man]](http://man7.org/linux/man-pages/man1/passwd.1.html)
+   - `passwd -e anirban` - Expire a user's password
+   - `passwd -l anirban` - Locking a user
+   - `passwd -u anirban` - Unlock a user
+ - `usermod {user}` - Modifies system account files [[man]](https://linux.die.net/man/8/usermod)
+   - `usermod -l “nishant” anirban` - Changing a user name
+ - `userdel {user}` - Delete a user account and related files [[man]](https://www.systutorials.com/docs/linux/man/8-userdel/)
+   - `userdel -r nishant` - Removing a user. -r: Files in the user's home directory will be removed along with the home directory itself and the user's mail spool.
+
+### Groups
+
+*Linux group is a mechanism to organise a collection of users. Like the user ID, each group is also associated with a unique ID called the GID (group ID). There are two types of groups – a primary group and a supplementary group. Each user is a member of a primary group and of zero or ‘more than zero’ supplementary groups. The group information is stored in /etc/group and the respective passwords are stored in the /etc/gshadow file.*
+
+ - `groupadd {group}` - Creates a new group [[man]](https://linux.die.net/man/8/groupadd)
+   - `groupadd employee` - Creating a group with default settings
+   - `groupadd -g 1200 manager` - Creating a group with a specified GID
+ - `gpasswd {group}` - Administer /etc/group, and /etc/gshadow [[man]](https://linux.die.net/man/1/gpasswd)
+   - `gpasswd -r employee` - Removing group password
+ - `groupmod {group}` - modifies the definition of the specified group [[man]](https://linux.die.net/man/8/groupmod)
+   - `groupmod -n hrmanager employee` - Changing the group’s name
+   - `groupmod -g 1050 manager` - Changing the group’s GID
+ - `groupdel {group}` - Deleting a group [[man]](https://www.systutorials.com/docs/linux/man/8-groupdel/)
+   - `groupdel employee` - Deleting a group
 
 ### Sudoers
 
 *sudo (/ˈsuːduː/ or /ˈsuːdoʊ/) is a program for Unix-like computer operating systems that allows users to run programs with the security privileges of another user, by default the superuser. It originally stood for "superuser do" as the older versions of sudo were designed to run commands only as the superuser.* - [sudo - Wiki]()
 
- - Make User a sudoer:
-   - Add a new file to the additional sudoers directory, `/etc/sudoers.d`:
-   - Eg. Add line `student ALL=(ALL) NOPASSWD:ALL` to `/etc/sudoers.d/student`
+Make User a sudoer:
+ - Add a new file to the additional sudoers directory, `/etc/sudoers.d`:
+ - Eg. Add line `student ALL=(ALL) NOPASSWD:ALL` to `/etc/sudoers.d/student`
 
 ## SSH
 
@@ -116,17 +142,65 @@ Unknown devices as well as nonexistent idle and login times aredisplayed as sing
  - Set `PasswordAuthentication no`
  - Restart ssh `sudo service ssh restart`
 
-
-
 ## File Permissions
 
  - `r` = read
  - `w` = write
  - `x` = execute
 
-Path permission descriptor `*---^^^&&&` where:
- - `*` - `d` indicates the path is a directory, `-` indicates file
- - `---` - 3 chars indicating **owner** permissions
- - `^^^` - 3 chars indicating **group** permissions
- - `&&&` - 3 chars indicating **everyone**-else permissions
+Path permission descriptor format `*OOOGGGEEE` where:
 
+ - `*` - `d` indicates the path is a directory, `-` indicates file
+ - `OOO` - 3 chars indicating **owner** permissions
+ - `GGG` - 3 chars indicating **group** permissions
+ - `EEE` - 3 chars indicating **everyone**-else permissions
+
+### Commands:
+
+ - `chown {user}:{group} {file}` - Changes the user and/or group ownership of each given file [[man]](https://linux.die.net/man/1/chown)
+ - `chmod {permissions} {file}` - Changes the file mode bits of each given file [[mod]](https://linux.die.net/man/1/chmod)
+   - Absolute Mode: `chmod {nnn} {file}`
+     - `nnn` Specifies the octal values that represent the permissions for the file owner, file group, and others, in that order.
+     - Eg. `chmod 755 public_dir`
+   - Symbolic Mode: `chmod who operator permission filename`
+     - `who` specifies whose permissions are changed
+     - `operator` specifies the operation to perform
+     - `permission` specifies what permissions are changed
+     - Eg. `chmod a+rx fileb`
+ - `chgrp {group} {file}` - Change the group of each file to group
+   - `chgrp employee somefile.txt`
+
+### Absolute Mode (Octal)
+
+| Octal Value | File Permissions Set | Permissions Description |
+| ----------- | -------------------- | ----------------------- |
+| 0           | ---                  | No permissions |
+| 1           | --x                  | Execute permission only |
+| 2           | -w-                  | Write permission only |
+| 3           | -wx                  | Write and execute permissions |
+| 4           | r--                  | Read permission only |
+| 5           | r-x                  | Read and execute permissions |
+| 6           | rw-                  | Read and write permissions |
+| 7           | rwx                  | Read, write, and execute permissions |
+
+### Symbolic Mode
+
+| Symbol | Function   | Description |
+| ------ | ---------- | ----------- |
+| u      | Who        | User (owner) |
+| g      | Who        | Group |
+| o      | Who        | Others |
+| a      | Who        | All |
+| =      | Operation  | Assign |
+| +      | Operation  | Add |
+| -      | Operation  | Remove |
+| r      | Permission | Read |
+| w      | Permission | Write |
+| x      | Permission | Execute |
+| l      | Permission | Mandatory locking, setgid bit is on, group execution bit is off |
+| s      | Permission | setuid or setgid bit is on |
+| S      | Permission | suid bit is on, user execution bit is off |
+| t      | Permission | Sticky bit is on, execution bit for others is on |
+| T      | Permission | Sticky bit is on, execution bit for others is off |
+
+## Ports
