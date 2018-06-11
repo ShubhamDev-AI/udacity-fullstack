@@ -190,3 +190,6 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
   - [`ssh` man page](https://linux.die.net/man/1/ssh)
   - [`ssh-keygen` man page](https://linux.die.net/man/1/ssh-keygen)
   - [`finger` man page](https://linux.die.net/man/1/finger)
+  - [`ufw` man page](http://manpages.ubuntu.com/manpages/xenial/man8/ufw.8.html)
+  - [Overview of common TCP and UDP default ports](https://www.examcollection.com/certification-training/network-plus-overview-of-common-tcp-and-udp-default-ports.html)
+  - [List of TCP and UDP port numbers - Wiki](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)

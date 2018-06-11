@@ -144,9 +144,21 @@ Make User a sudoer:
 
 ## File Permissions
 
- - `r` = read
- - `w` = write
- - `x` = execute
+Every file and directory on your Unix/Linux system is assigned 3 types of owner, given below.
+
+**User** A user is the owner of the file. By default, the person who created a file becomes its owner. Hence, a user is also sometimes called an owner.
+
+**Group** A user- group can contain multiple users. All users belonging to a group will have the same access permissions to the file. Suppose you have a project where a number of people require access to a file. Instead of manually assigning permissions to each user, you could add all users to a group, and assign group permission to file such that only this group members and no one else can read or modify the files.
+
+**Other** Any other user who has access to a file. This person has neither created the file, nor he belongs to a usergroup who could own the file. Practically, it means everybody else. Hence, when you set the permission for others, it is also referred as set permissions for the world.
+
+Every file and directory in your UNIX/Linux system has following 3 permissions defined for all the 3 owners discussed above.
+
+ - `r` - This permission give you the authority to open and read a file. Read permission on a directory gives you the ability to lists its content.
+ - `w` - The write permission gives you the authority to modify the contents of a file. The write permission on a directory gives you the authority to add, remove and rename files stored in the directory.
+ - `x` - You cannot run a program unless the execute permission is set. If the execute permission is not set, you might still be able to see/modify the program code(provided read & write permissions are set), but not run it.
+
+[File Permissions in Linux/Unix with Example](https://www.guru99.com/file-permissions.html)
 
 Path permission descriptor format `*OOOGGGEEE` where:
 
@@ -203,4 +215,35 @@ Path permission descriptor format `*OOOGGGEEE` where:
 | t      | Permission | Sticky bit is on, execution bit for others is on |
 | T      | Permission | Sticky bit is on, execution bit for others is off |
 
-## Ports
+## Firewall
+
+### Default ports:
+
+ - SSH = `22`
+ - HTTP = `80`
+ - HTTPS = `443`
+ - IMAP = `143`
+ - SMTP = `25`
+ - POP3 = `110`
+ - RDP = `3389`
+ - DNS = `53`
+ - DHCP = server `67`, client `68`
+ - FTP = data `20`, command `21`
+ - TELNET = `23`
+
+### UFW - Uncomplicated Firewall
+
+*The default firewall configuration tool for Ubuntu is ufw. Developed to ease iptables firewall configuration, ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall. By default UFW is disabled.* - [UFW](https://help.ubuntu.com/community/UFW)
+
+ - `ufw status` - check the status of UFW
+   - `ufw status verbose`
+   - `ufw show raw`
+ - `ufw enable` - enable firewall
+ - `ufw disable` - disable firewall
+ - `ufw default deny incoming`
+ - `ufw default allow outgoing`
+ - `ufw allow ssh`
+   - `ufw allow 2222/tcp`
+
+#### Configure UFW
+

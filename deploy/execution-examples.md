@@ -245,3 +245,39 @@ root    ALL=(ALL:ALL) ALL
 # CLOUD_IMG: This file was created/modified by the Cloud Image build process
 vagrant ALL=(ALL) NOPASSWD:ALL
 ```
+
+
+## UFW
+
+`sudo ufw status`
+
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+2222/tcp                   ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+22 (v6)                    ALLOW       Anywhere (v6)
+2222/tcp (v6)              ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+```
+
+`sudo ufw status verbose`
+
+```
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW IN    Anywhere
+2222/tcp                   ALLOW IN    Anywhere
+80/tcp                     ALLOW IN    Anywhere
+22 (v6)                    ALLOW IN    Anywhere (v6)
+2222/tcp (v6)              ALLOW IN    Anywhere (v6)
+80/tcp (v6)                ALLOW IN    Anywhere (v6)
+```
