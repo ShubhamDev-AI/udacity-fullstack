@@ -38,9 +38,12 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
      - [MVO - Model View *Octopus](frontend/mvo.md)
      - [Lib Knockout JS](frontend/knockout.md)
  - [Deploy](webservers)
-   - Deploying to Linux Servers
+   - Deploying to Linux Servers (webservers, security, ssh)
    - Notes:
      - [Vagrant](deploy/vagrant.md)
+     - [Linux](deploy/linux.md)
+     - [Linux - Useful Know-How](deploy/linux.md)
+     - [Linux - Execution Examples](deploy/execution-examples.md)
 
 
 ## Resources
@@ -48,17 +51,17 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
 ### Python
 
  - [Download Python](https://www.python.org/downloads/)
- - [Python Module: time](https://docs.python.org/2/library/time.html)
- - [Python Module: webbrowser](https://docs.python.org/2/library/webbrowser.html)
- - [Python Module: os](https://docs.python.org/2/library/os.html)
- - [Python Module: shutil](https://docs.python.org/2/library/shutil.html)
- - [Python Module: turtle](https://docs.python.org/2/library/turtle.html)
- - [Python Module: json](https://docs.python.org/2/library/json.html)
- - [Python Module: urllib](https://docs.python.org/2/library/urllib.html)
- - [Python Module: urllib.parse](https://docs.python.org/3/library/urllib.parse.html)
- - [Python Module: psycopg](http://initd.org/psycopg/docs/)
- - [Python Module: bleach](http://bleach.readthedocs.io/en/latest/)
- - [Python Module: sqlalchemy](http://www.sqlalchemy.org/)
+ - [Python Module: `time`](https://docs.python.org/2/library/time.html)
+ - [Python Module: `webbrowser`](https://docs.python.org/2/library/webbrowser.html)
+ - [Python Module: `os`](https://docs.python.org/2/library/os.html)
+ - [Python Module: `shutil`](https://docs.python.org/2/library/shutil.html)
+ - [Python Module: `turtle`](https://docs.python.org/2/library/turtle.html)
+ - [Python Module: `json`](https://docs.python.org/2/library/json.html)
+ - [Python Module: `urllib`](https://docs.python.org/2/library/urllib.html)
+ - [Python Module: `urllib.parse`](https://docs.python.org/3/library/urllib.parse.html)
+ - [Python Module: `psycopg`](http://initd.org/psycopg/docs/)
+ - [Python Module: `bleach`](http://bleach.readthedocs.io/en/latest/)
+ - [Python Module: `sqlalchemy`](http://www.sqlalchemy.org/)
  - [Python Langauge: Classes](https://docs.python.org/2.7/tutorial/classes.html)
  - [Python Langauge: Data Model](https://docs.python.org/2/reference/datamodel.html)
  - [Python Langauge: Dictionary](https://www.tutorialspoint.com/python/python_dictionary.htm)
@@ -173,3 +176,10 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
   - [DistroWatch](https://distrowatch.com/)
   - [Comparison of Linux distributions - Wiki](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions)
   - [Bash Startup Files](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
+  - [`useradd` man page](https://linux.die.net/man/8/useradd)
+  - [`passwd` man page](http://man7.org/linux/man-pages/man1/passwd.1.html)
+  - [`finger` man page](https://linux.die.net/man/1/finger)
+  - [`ssh` man page](https://linux.die.net/man/1/ssh)
+  - [`ssh-keygen` man page](https://linux.die.net/man/1/ssh-keygen)
+  - [`chmod` man page](https://linux.die.net/man/1/chmod)
+  - [`` man page]()
