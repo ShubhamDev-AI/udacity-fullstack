@@ -129,7 +129,7 @@ Make User a sudoer:
 #### SSH with public/private key pair
 
  - Generate new public/private key pair with `ssh-keygen`
- - Add the public key `ssh-rsa AAAA...` to `~/.ssh/autorized_keys`
+ - Add the public key `ssh-rsa AAAA...` to `~/.ssh/authorized_keys`
  - Set the correct file permissions:
    - `chmod 700 .ssh`
    - `chmod 644 .ssh/authorized_keys`
@@ -245,5 +245,41 @@ Path permission descriptor format `*OOOGGGEEE` where:
  - `ufw allow ssh`
    - `ufw allow 2222/tcp`
 
-#### Configure UFW
 
+
+
+## Installing Apache
+
+Install Apache using your package manager with the following command: `sudo apt-get install apache2`
+
+configure Apache to hand-off certain requests to an application handler - `mod_wsgi`. The first step in this process is to install mod_wsgi: `sudo apt-get install libapache2-mod-wsgi`
+
+
+You then need to configure Apache to handle requests using the WSGI module. You’ll do this by editing the /etc/apache2/sites-enabled/000-default.conf file. This file tells Apache how to respond to requests, where to find the files for a particular site and much more. You can read up on everything this file can do within the [Apache documentation](https://httpd.apache.org/docs/2.2/configuring.html).
+
+For now, add the following line at the end of the `<VirtualHost *:80>` block, right before the closing `</VirtualHost>` line: `WSGIScriptAlias / /var/www/html/myapp.wsgi`
+
+Finally, restart Apache with the `sudo apache2ctl restart` command.
+
+
+[WSGI](http://wsgi.readthedocs.org/en/latest/) is a specification that describes how a web server communicates with web applications. Most if not all Python web frameworks are WSGI compliant, including Flask and Django; but to quickly test if you have your Apache configuration correct you’ll write a very basic WSGI application.
+
+You just defined the name of the file you need to write within your Apache configuration by using the `WSGIScriptAlias` directive. Despite having the extension `.wsgi`, these are just Python applications. Create the /var/www/html/myapp.wsgi file using the command `sudo nano /var/www/html/myapp.wsgi`. Within this file, write the following application:
+
+```py
+def application(environ, start_response):
+    status = '200 OK'
+    output = 'Hello Udacity!'
+
+    response_headers = [('Content-type', 'text/plain'), ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+
+    return [output]
+```
+
+This application will simply print return `Hello Udacity!` along with the required HTTP response headers. After saving this file you can reload `http://localhost:8080` to see your application run in all its glory!
+
+
+## Installing PostgreSQL
+
+Install PostgreSQL to server your data using the command `sudo apt-get install postgresql`.

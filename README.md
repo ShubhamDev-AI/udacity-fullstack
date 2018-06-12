@@ -193,3 +193,4 @@ My Udacity *Full Stack Web Developer Nanodegree* course source and notes.
   - [`ufw` man page](http://manpages.ubuntu.com/manpages/xenial/man8/ufw.8.html)
   - [Overview of common TCP and UDP default ports](https://www.examcollection.com/certification-training/network-plus-overview-of-common-tcp-and-udp-default-ports.html)
   - [List of TCP and UDP port numbers - Wiki](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+  - [7 Security Measures to Protect Your Servers](https://www.digitalocean.com/community/tutorials/7-security-measures-to-protect-your-servers)
